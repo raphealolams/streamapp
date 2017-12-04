@@ -1,0 +1,17 @@
+body {
+    background-color: #30332e;
+}
+
+#form-container {
+    margin: auto;
+    width: 65%;
+    margin-top: 100px;
+}
+
+#file-button-mask {
+    margin-top: 15px;
+}
+
+#file-button {
+    display: none;
+}
