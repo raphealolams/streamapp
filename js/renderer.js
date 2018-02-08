@@ -8,24 +8,28 @@ var dialog = app.dialog;
 
 //Document Element here
 var fileButton = document.getElementById('file-button');
+var textAreaOutput = document.getElementById('output');
 
 //Add Event Listener
 fileButton.addEventListener('click', () => {
     //Open File Dialog box
-    dialog.showOpenDialog((filenames) => {
+    dialog.showOpenDialog((fileNames) => {
         // if Empty alert Users
-        if (filenames === undefined) {
+        if (fileNames === undefined) {
             alert("No File Selected");
             return;
         }
 
         //Read File with 'fs'
-        fs.readFile(filenames[0], (err, data) => {
+        fs.readFile(fileNames[0], (err, data) => {
             //If Error Alert User
             if (err) {
                 alert(err.message);
                 return;
             }
+
+            //Output Here
+            textAreaOutput.value = data;
         })
     })
 });
